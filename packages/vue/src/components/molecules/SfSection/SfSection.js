@@ -3,15 +3,25 @@ export default {
   name: "SfSection",
   props: {
     /**
-     * Section heading
+     * Heading title
      */
-    heading: {
-      type: Object,
-      default: () => ({
-        title: "",
-        subtitle: "",
-        level: 2
-      })
+    titleHeading: {
+      type: String,
+      default: ""
+    },
+    /**
+     * Heading subtitle
+     */
+    subtitleHeading: {
+      type: String,
+      default: ""
+    },
+    /**
+     * Heading tag level
+     */
+    levelHeading: {
+      type: Number,
+      default: 2
     }
   },
   data() {
@@ -24,7 +34,7 @@ export default {
   },
   mounted: function() {
     this.hasUnderlinedModifier = this.$el.classList.contains(
-      "sf-section--underline"
+      "sf-section--no-underline"
     );
   }
 };

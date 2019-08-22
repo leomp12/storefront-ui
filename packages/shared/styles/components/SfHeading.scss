@@ -1,14 +1,20 @@
 @import '../variables';
 
-$heading--border-color: #F1F2F4 !default;
-$heading--underline-subtitle-color: #A3A5AD !default;
+$heading--border-color: #f1f2f4 !default;
+$heading--underline-subtitle-color: #a3a5ad !default;
 
 .sf-heading {
-    text-align: left;
-  @media screen and (min-width: $desktop-min){
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $heading--border-color;
+  @media screen and (min-width: $desktop-min) {
+    display: block;
+    padding-bottom: 0;
+    border: 0;
     text-align: center;
   }
   &__title {
+    font-weight: 600;
     line-height: 1.38;
     padding: 0;
   }
@@ -17,23 +23,16 @@ $heading--underline-subtitle-color: #A3A5AD !default;
     line-height: 1.64;
     font-weight: 300;
   }
-
   &--underline {
-    padding-bottom: 10px;
-    border-bottom: 1px solid $heading--border-color;
-
-    @media screen and (min-width: $desktop-min) {
-      display: block;
-      padding-bottom: 0;
-      border: 0;
-    }
   }
-
-  &--left{
+  &--no-underline {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  &--left {
     text-align: left;
   }
-
-  &--right{
+  &--right {
     text-align: right;
   }
 }
